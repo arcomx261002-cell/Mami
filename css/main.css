@@ -53,7 +53,7 @@ body {
 }
 .titulo {
   font-family: 'Poppins', sans-serif;
-  color: lightpink;
+  color: #ffffff;
   position: absolute;
   font-weight: 400;
   letter-spacing: 2px;
@@ -110,7 +110,7 @@ body {
 
 #lyrics {
   position: absolute;
-  top: 8%;
+  top: 4%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -121,7 +121,7 @@ body {
 
 .lyric-line {
   font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ffda75;
   text-shadow: 0 0 15px rgba(232, 93, 4, 0.6), 0 0 30px rgba(255, 218, 117, 0.4);
   position: absolute;
