@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Starry background using body pseudoelements */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: transparent;
+    z-index: -1;
+}
+
+body::before {
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+        10vw 5vh 1px 0px white, 20vw 15vh 1px 1px white, 30vw 5vh 0px 0px white,
+        40vw 25vh 1px 0px white, 50vw 10vh 0px 1px white, 60vw 35vh 1px 0px white,
+        70vw 15vh 1px 0px white, 80vw 25vh 0px 0px white, 90vw 5vh 1px 1px white,
+        15vw 45vh 1px 0px white, 25vw 55vh 0px 0px white, 35vw 35vh 1px 1px white,
+        45vw 65vh 1px 0px white, 55vw 45vh 0px 0px white, 65vw 55vh 1px 1px white,
+        75vw 35vh 0px 0px white, 85vw 65vh 1px 0px white, 95vw 45vh 0px 0px white;
+    animation: twinkle 4s infinite alternate;
+}
+
+body::after {
+    width: 1px;
+    height: 1px;
+    box-shadow: 
+        12vw 10vh 0px 0px white, 22vw 20vh 1px 0px white, 32vw 12vh 0px 0px white,
+        42vw 32vh 0px 0px white, 52vw 18vh 0px 0px white, 62vw 42vh 0px 0px white,
+        72vw 22vh 0px 0px white, 82vw 32vh 1px 0px white, 92vw 12vh 0px 0px white;
+    animation: twinkle 3s infinite alternate-reverse;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+.greetings {
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem;
+    font-weight: 700;
+    color: #ffda75; /* A warm golden yellow matching the sunflowers */
+    text-shadow: 0 0 20px rgba(255, 218, 117, 0.6), 0 0 40px rgba(232, 93, 4, 0.4);
+    margin-bottom: 10px;
+    display: flex;
+    gap: 2px;
+}
+
+.greetings span {
+    animation: wave 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Cascading animation delays for the wave effect */
+.greetings span:nth-child(1) { animation-delay: 0.0s; }
+.greetings span:nth-child(2) { animation-delay: 0.1s; }
+.greetings span:nth-child(3) { animation-delay: 0.2s; }
+.greetings span:nth-child(4) { animation-delay: 0.3s; margin-right: 25px; } /* Space after Hola */
+.greetings span:nth-child(5) { animation-delay: 0.4s; }
+.greetings span:nth-child(6) { animation-delay: 0.5s; }
+.greetings span:nth-child(7) { animation-delay: 0.6s; }
+.greetings span:nth-child(8) { animation-delay: 0.7s; }
+
+.description {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    color: #f0f0f0;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.button {
+    opacity: 0;
+    animation: fadeInUp 2s ease-in-out 2s forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.botones {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    padding: 15px 40px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.botones:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 218, 117, 0.5);
+    transform: scale(1.05);
+}
+
+.botones a {
+    text-decoration: none;
+    color: white !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    .greetings {
+        font-size: 4rem;
+    }
+    .description {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    .greetings span:nth-child(4) {
+        margin-right: 15px;
+    }
+}
